@@ -20,10 +20,22 @@ func addApproutes(route *mux.Router) {
 
 	route.HandleFunc("/developer", getDevelopers).Methods("GET")
 
+	route.HandleFunc("/developer", addDeveloper).Methods("POST")
+
+	route.HandleFunc("/developer", updateDeveloper).Methods("PUT")
+
+	route.HandleFunc("/developer/{id}", deleteDeveloper).Methods("DELETE")
+
 
 	route.HandleFunc("/skill/{id}",getSkill).Methods("GET")
 
 	route.HandleFunc("/skill",getSkills).Methods("GET")
+
+	route.HandleFunc("/skill", addSkill).Methods("POST")
+
+	route.HandleFunc("/skill", updateSkill).Methods("PUT")
+
+	route.HandleFunc("/skill/{id}", deleteSkill).Methods("DELETE")
 
 	
 
